@@ -1,5 +1,4 @@
 # Andreina Harding
-#hello
 # this is the first project in python, a guessing a number game.
 
 import random
