@@ -5,12 +5,14 @@ import random
 
 LOWER_RANGE = 1
 UPPER_RANGE = 10
+high_score = 0
 
 #Initial greeting of the game
 def start_game():
-    print("-"*110)
+    print("-"*95)
     print("\n Welcome to the Guessing A Number Game! \n")
-    print("-"*110)
+    print("-"*95)
+    print ("highscore: {}".format(high_score))
     return input("Enter a number between 1 and 10: ")
 
 #Defines if the user_input is an integer, returns the integer or Cero
@@ -34,9 +36,15 @@ attempts_counter=1
 while game_continue.lower() == 'y':
     number=is_a_number(user_input)
     while number != number_to_guess:
-        if number > number_to_guess:
+        if number >  UPPER_RANGE or number < LOWER_RANGE:
+            try:
+                raise ValueError 
+            except ValueError as err:
+                print("The number must be in the 1 -10 range")
+
+        if number < UPPER_RANGE and number > number_to_guess:
              print ("It is lower than {}".format(number))
-        elif number > 0 and number < number_to_guess:
+        elif number >= LOWER_RANGE and number < number_to_guess:
              print ("It is bigger than {}".format(number))
         user_input= input("try again: ")
         attempts_counter += 1
@@ -44,6 +52,9 @@ while game_continue.lower() == 'y':
     print("you got it!!!! {} was the number!! you used {} attempt(s)".format(number, attempts_counter))
     game_continue= input("Do you want to play again? ")
     if game_continue == 'y':
+        if high_score == 0 or attempts_counter < high_score:
+            high_score = attempts_counter
+            print ("WAY TO GO! You just set a new high score")
         attempts_counter=1
         user_input=start_game()
 
