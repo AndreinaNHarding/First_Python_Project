@@ -40,9 +40,9 @@ while game_continue.lower() == 'y':
             try:
                 raise ValueError 
             except ValueError as err:
-                print("The number must be in the 1 -10 range")
+                print("It must be a number in the 1 -10 range")
 
-        if number < UPPER_RANGE and number > number_to_guess:
+        if number <= UPPER_RANGE and number > number_to_guess:
              print ("It is lower than {}".format(number))
         elif number >= LOWER_RANGE and number < number_to_guess:
              print ("It is bigger than {}".format(number))
