@@ -1,14 +1,19 @@
+# Andreina Harding
+# this is the first project in python, a guessing a number game.
+
 import random
 
 LOWER_RANGE = 1
 UPPER_RANGE = 10
 
+#Initial greeting of the game
 def start_game():
     print("-"*110)
     print("\n Welcome to the Guessing A Number Game! \n")
     print("-"*110)
     return input("Enter a number between 1 and 10: ")
 
+#Defines if the user_input is an integer, returns the integer or Cero
 def is_a_number(the_user_input):
     is_number= False
     number=0
@@ -17,7 +22,6 @@ def is_a_number(the_user_input):
         is_number= True
     except ValueError:
         print("Oh no, that is not a valid entrance!")
-
     if  is_number:
          number= int(the_user_input)
     return  number
