@@ -1,4 +1,5 @@
 # Andreina Harding
+#hello
 # this is the first project in python, a guessing a number game.
 
 import random
@@ -33,7 +34,6 @@ game_continue = 'y'
 attempts_counter=1
 while game_continue.lower() == 'y':
     number=is_a_number(user_input)
-    
     while number != number_to_guess:
         if number > number_to_guess:
              print ("It is lower than {}".format(number))
