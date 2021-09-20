@@ -50,16 +50,17 @@ while game_continue.lower() == 'y':
         attempts_counter += 1
         number=is_a_number(user_input)
     print("you got it!!!! {} was the number!! you used {} attempt(s)".format(number, attempts_counter))
-    game_continue= input("Do you want to play again? ")
-    if game_continue == 'y':
-        if high_score == 0 or attempts_counter < high_score:
+    if high_score == 0 or attempts_counter < high_score:
             high_score = attempts_counter
             print ("WAY TO GO! You just set a new high score")
+    game_continue= input("Do you want to play again? (Y/N) ")
+    if game_continue == 'y':
         attempts_counter=1
         user_input=start_game()
 
+print("-"*80)
 print ("See you later, Have a nice day!!! ")
-
+print("-"*80)
         
 
 
