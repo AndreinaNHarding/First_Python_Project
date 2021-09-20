@@ -45,7 +45,7 @@ while game_continue.lower() == 'y':
         if number <= UPPER_RANGE and number > number_to_guess:
              print ("It is lower than {}".format(number))
         elif number >= LOWER_RANGE and number < number_to_guess:
-             print ("It is bigger than {}".format(number))
+             print ("It is higher than {}".format(number))
         user_input= input("try again: ")
         attempts_counter += 1
         number=is_a_number(user_input)
